@@ -23,14 +23,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
         const { email, password } = parsed.data;
 
-        const rows = await sql<{ id: string; email: string; name: string; password_hash: string }[]>`
+        const rows = await sql`
           SELECT id, email, name, password_hash
           FROM admin_users
           WHERE email = ${email}
           LIMIT 1
         `;
 
-        const user = rows[0];
+        const user = rows[0] as { id: string; email: string; name: string; password_hash: string } | undefined;
         if (!user) return null;
 
         const valid = await bcrypt.compare(password, user.password_hash);
