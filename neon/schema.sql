@@ -52,3 +52,11 @@ CREATE TABLE IF NOT EXISTS site_settings (
   key   TEXT PRIMARY KEY,
   value TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS admin_users (
+  id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  email         TEXT UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL,
+  name          TEXT NOT NULL DEFAULT 'Admin',
+  created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
+);

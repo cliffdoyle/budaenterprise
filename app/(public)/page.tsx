@@ -72,8 +72,8 @@ async function getSchools(): Promise<SchoolType[]> {
 
 export default async function HomePage() {
   const [recentImages, schools] = await Promise.all([getRecentImages(), getSchools()]);
-  const phone = process.env.NEXT_PUBLIC_PHONE ?? '+254 712 345 678';
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254712345678';
+  const phone = process.env.NEXT_PUBLIC_PHONE ?? '+254 713 925 354';
+  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254713925354';
 
   return (
     <>

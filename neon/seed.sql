@@ -30,8 +30,8 @@ on conflict (slug) do nothing;
 
 -- Site settings defaults
 insert into site_settings (key, value) values
-  ('phone',          '+254 712 345 678'),
-  ('whatsapp',       '254712345678'),
+  ('phone',          '+254 713 925 354'),
+  ('whatsapp',       '254713925354'),
   ('email',          'info@budaenterprise.co.ke'),
   ('address',        'Kisumu, Kenya'),
   ('business_hours', 'Mon–Sat 7 am–6 pm | Sun by appointment')
@@ -64,3 +64,8 @@ insert into schools (name, logo_url, work_description, testimonial, year, is_vis
   true
 )
 on conflict do nothing;
+
+-- Admin user (password: yourpassword — change after first login)
+insert into admin_users (email, password_hash, name) values
+  ('oyoocliff471@gmail.com', '$2b$12$NYCw66mvkgLSqO8tgZiReOfWmDKQTBZtnXJrtr01IO.6phH2yqiAu', 'Admin')
+on conflict (email) do nothing;

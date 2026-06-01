@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
+import { sql } from '@/lib/db';
 
 const credentialsSchema = z.object({
   email: z.string().email(),
@@ -21,16 +22,21 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         if (!parsed.success) return null;
 
         const { email, password } = parsed.data;
-        const adminEmail = process.env.ADMIN_EMAIL;
-        const adminPasswordHash = process.env.ADMIN_PASSWORD_HASH;
 
-        if (!adminEmail || !adminPasswordHash) return null;
-        if (email !== adminEmail) return null;
+        const rows = await sql<{ id: string; email: string; name: string; password_hash: string }[]>`
+          SELECT id, email, name, password_hash
+          FROM admin_users
+          WHERE email = ${email}
+          LIMIT 1
+        `;
 
-        const valid = await bcrypt.compare(password, adminPasswordHash);
+        const user = rows[0];
+        if (!user) return null;
+
+        const valid = await bcrypt.compare(password, user.password_hash);
         if (!valid) return null;
 
-        return { id: '1', email: adminEmail, name: 'Admin' };
+        return { id: user.id, email: user.email, name: user.name };
       },
     }),
   ],

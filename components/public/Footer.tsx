@@ -33,8 +33,8 @@ const pages = [
 ];
 
 export default function Footer() {
-  const phone = process.env.NEXT_PUBLIC_PHONE ?? '+254 712 345 678';
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254712345678';
+  const phone = process.env.NEXT_PUBLIC_PHONE ?? '+254 713 925 354';
+  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254713925354';
 
   return (
     <footer className="bg-navy text-white/80">

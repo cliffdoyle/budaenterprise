@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export default function WhatsAppFAB() {
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254712345678';
+  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254713925354';
 
   return (
     <a

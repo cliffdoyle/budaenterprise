@@ -137,7 +137,7 @@ export default async function ServicePage({
   const data = dbService ?? { ...SEED[slug], hero_image_url: null };
   const heroSrc = data.hero_image_url ?? HERO_IMAGES[slug];
   const features = Array.isArray(data.features) ? data.features : [];
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254712345678';
+  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254713925354';
   const greeting = encodeURIComponent(`Hello, I need a quote for ${data.title}`);
 
   return (

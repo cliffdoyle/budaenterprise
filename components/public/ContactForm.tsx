@@ -18,8 +18,8 @@ export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   const { toast, show, hide } = useToast();
 
-  const phone = process.env.NEXT_PUBLIC_PHONE ?? '+254 712 345 678';
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254712345678';
+  const phone = process.env.NEXT_PUBLIC_PHONE ?? '+254 713 925 354';
+  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '254713925354';
   const mapsEmbed = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED ?? '';
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
