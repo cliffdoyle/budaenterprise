@@ -23,7 +23,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-navy shadow-lg">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="text-white font-bold text-xl tracking-tight">
-          Buda<span className="text-cta">Enterprise</span>
+          Vimilip<span className="text-cta">Enterprise</span>
         </Link>
 
         {/* Desktop nav */}
