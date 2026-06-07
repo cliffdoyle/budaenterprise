@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation';
+import { auth } from '@/lib/auth';
 import AdminSidebar from '@/components/admin/AdminSidebar';
 import { sql } from '@/lib/db';
 
@@ -11,6 +13,9 @@ async function getUnreadCount(): Promise<number> {
 }
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+  const session = await auth();
+  if (!session) redirect('/admin/login');
+
   const unreadCount = await getUnreadCount();
 
   return (
