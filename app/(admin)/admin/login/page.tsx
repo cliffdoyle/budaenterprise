@@ -41,7 +41,7 @@ function LoginForm() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-extrabold text-navy">
-            Buda<span className="text-cta">Enterprise</span>
+            Vimilip<span className="text-cta">Enterprise</span>
           </h1>
           <p className="text-gray-500 text-sm mt-1">Admin Login</p>
         </div>
@@ -93,7 +93,7 @@ function LoginForm() {
         </div>
 
         <p className="text-center text-xs text-gray-400 mt-6">
-          Buda Enterprise &copy; {new Date().getFullYear()}
+          Vimilip Enterprise &copy; {new Date().getFullYear()}
         </p>
       </div>
     </div>

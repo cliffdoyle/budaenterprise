@@ -9,35 +9,38 @@ import type { Service, PortfolioImage } from '@/lib/types';
 
 export const revalidate = 60;
 
-const VALID_SLUGS = ['transport', 'plumbing', 'painting'] as const;
+const VALID_SLUGS = ['transport', 'plumbing', 'painting', 'welding'] as const;
 type Slug = (typeof VALID_SLUGS)[number];
 
 const HOW_IT_WORKS: Record<Slug, { step: string; title: string; desc: string }[]> = {
-  transport: [
-    { step: '01', title: 'Book Your Pickup', desc: 'Call or WhatsApp with your pickup location and drop-off address.' },
-    { step: '02', title: 'We Confirm & Arrive', desc: 'We confirm the booking and arrive on time with the right vehicle.' },
-    { step: '03', title: 'Safe Delivery', desc: 'Goods delivered safely. Payment on completion.' },
+  painting: [
+    { step: '01', title: 'Request a Quote', desc: 'Share your space details — we provide a competitive written quote within 24 hours.' },
+    { step: '02', title: 'Surface Preparation', desc: 'We strip old paint, fill cracks, sand and prime all surfaces before a single brush is lifted.' },
+    { step: '03', title: 'Quality Finish', desc: 'Painting completed neatly with premium paint. Site left spotless. Work guaranteed.' },
+  ],
+  welding: [
+    { step: '01', title: 'Describe Your Needs', desc: 'Tell us what you need — beds, locktables, gates or custom metalwork. We provide a free quote.' },
+    { step: '02', title: 'Fabrication', desc: 'Your items are fabricated in our workshop using quality steel, then primed and painted.' },
+    { step: '03', title: 'Delivery & Installation', desc: 'We deliver and install everything on site. Satisfaction guaranteed.' },
   ],
   plumbing: [
     { step: '01', title: 'Describe the Problem', desc: 'Tell us what needs fixing — we diagnose over a call if needed.' },
     { step: '02', title: 'Site Visit & Quote', desc: 'We visit, assess the work and give a clear written quote.' },
     { step: '03', title: 'Work & Guarantee', desc: 'Plumbing completed to standard. All work is guaranteed.' },
   ],
-  painting: [
-    { step: '01', title: 'Request a Quote', desc: 'Share your space details and we provide a competitive quote.' },
-    { step: '02', title: 'Preparation', desc: 'We prepare surfaces, lay protective sheets and prime the walls.' },
-    { step: '03', title: 'Quality Finish', desc: 'Painting completed neatly. Site left clean on completion.' },
+  transport: [
+    { step: '01', title: 'Book Your Pickup', desc: 'Call or WhatsApp with your pickup location and drop-off address.' },
+    { step: '02', title: 'We Confirm & Arrive', desc: 'We confirm the booking and arrive on time with the right vehicle.' },
+    { step: '03', title: 'Safe Delivery', desc: 'Goods delivered safely. Payment on completion.' },
   ],
 };
 
 // Unsplash hero image hints per service
 const HERO_IMAGES: Record<Slug, string> = {
-  // Search: "pickup truck cargo delivery"
-  transport: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&q=80',
-  // Search: "plumber pipes tools"
-  plumbing:  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
-  // Search: "painting house interior roller"
   painting:  'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=1200&q=80',
+  welding:   'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1200&q=80',
+  plumbing:  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
+  transport: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1200&q=80',
 };
 
 async function getService(slug: string): Promise<Service | null> {
@@ -64,42 +67,63 @@ async function getServiceImages(slug: string): Promise<PortfolioImage[]> {
 
 // Seed fallback titles/features
 const SEED: Record<Slug, Pick<Service, 'title' | 'description' | 'features'>> = {
-  transport: {
-    title: 'Fast, Reliable Goods Transport in Kisumu',
+  painting: {
+    title: 'Professional Painting — Schools, Commercial & Residential',
     description:
-      'Whether you are moving house, delivering stock, or transporting equipment across Kisumu, our pickup truck service gets your goods there safely and on time.',
+      "Vimilip Enterprise is Kenya's go-to painting contractor for institutions and businesses. From thorough surface preparation to premium finishes, our certified painters deliver results that last.",
     features: [
-      'Same-day delivery available',
-      'Careful handling of fragile goods',
-      'Competitive rates by distance',
-      'Available 7 days a week',
-      'Serves all Kisumu estates and surrounding areas',
-    ],
-  },
-  plumbing: {
-    title: 'Expert Plumbing Services — Homes, Schools & Businesses',
-    description:
-      'From leaking pipes to full bathroom installations, we provide professional plumbing solutions with clean workmanship and lasting results.',
-    features: [
-      'Emergency leak repairs',
-      'New pipe installation',
-      'Water tank plumbing',
-      'Bathroom & kitchen fitting',
-      'School and commercial projects',
+      'Full interior & exterior painting',
+      'Thorough surface stripping, filling & priming',
+      'Premium weather-resistant exterior paints',
+      'Colour consultation & design advice',
+      'Schools, hospitals, markets & offices',
+      'Large-scale institutional projects',
+      'Clean site management daily',
       'All work guaranteed',
     ],
   },
-  painting: {
-    title: 'Professional Painting for Interior & Exterior Spaces',
+  welding: {
+    title: 'Welding & Steel Fabrication — Custom Metalwork for Schools & Homes',
     description:
-      'Transform your space with quality paintwork. We serve residential homes, offices, and institutions across Kisumu with neat, durable finishes.',
+      'Our certified welders fabricate high-quality school furniture and custom metalwork including student dormitory beds, lockable desks, security gates and structural steel. Built to last.',
     features: [
-      'Interior and exterior painting',
-      'Wall preparation and priming',
-      'Colour consultation',
-      'Schools and large buildings',
-      'Weather-resistant exterior finishes',
-      'Clean site management',
+      'Student dormitory beds — standard & double decker',
+      'School locktables (lockable storage desks)',
+      'Security gates and window grilles',
+      'Custom steel doors and frames',
+      'Staircases and balustrades',
+      'Workshop and industrial shelving',
+      'Outdoor benches and school furniture',
+      'All metalwork primed and painted',
+    ],
+  },
+  plumbing: {
+    title: 'Expert Plumbing — Institutions, Homes & Commercial Buildings',
+    description:
+      'From emergency leak repairs to full pipe installations and bathroom fitting, our experienced plumbers handle every job with clean workmanship.',
+    features: [
+      'Emergency leak & burst pipe repairs',
+      'New pipe installation (CPVC, PVC & galvanised)',
+      'Water tank installation & plumbing',
+      'Complete bathroom & kitchen fitting',
+      'School and institutional sanitation projects',
+      'Drainage and sewerage works',
+      'Water pump installation',
+      'All work guaranteed',
+    ],
+  },
+  transport: {
+    title: 'Reliable Transport — Materials, Equipment & Goods Nationwide',
+    description:
+      'Whether you are moving school furniture, transporting construction materials or delivering stock, our fleet handles it safely and on time.',
+    features: [
+      'Same-day and scheduled delivery',
+      'School furniture & equipment transport',
+      'Construction materials haulage',
+      'Careful handling of fragile items',
+      'Competitive distance-based rates',
+      'Available 7 days a week',
+      'Countrywide coverage',
     ],
   },
 };

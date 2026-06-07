@@ -10,7 +10,7 @@ import type { SiteSettings } from '@/lib/types';
 const FIELDS: { key: keyof SiteSettings; label: string; type?: string; placeholder: string }[] = [
   { key: 'phone',          label: 'Display Phone',     placeholder: '+254 712 345 678' },
   { key: 'whatsapp',       label: 'WhatsApp Number',   placeholder: '254712345678 (international, no +)' },
-  { key: 'email',          label: 'Email Address',     type: 'email', placeholder: 'info@budaenterprise.co.ke' },
+  { key: 'email',          label: 'Email Address',     type: 'email', placeholder: 'info@vimilipenterprise.co.ke' },
   { key: 'address',        label: 'Business Address',  placeholder: 'Kisumu, Kenya' },
   { key: 'business_hours', label: 'Business Hours',    placeholder: 'Mon–Sat 7 am–6 pm | Sun by appointment' },
 ];

@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Buda Enterprise Kisumu",
-    default: "Buda Enterprise — Transport, Plumbing & Painting in Kisumu",
+    template: "%s | Vimilip Enterprise Kisumu",
+    default: "Vimilip Enterprise — Transport, Plumbing & Painting in Kisumu",
   },
   description:
     "Professional transport, plumbing and painting services in Kisumu, Kenya. Trusted by homes, schools and businesses across the region.",
   openGraph: {
-    siteName: "Buda Enterprise",
+    siteName: "Vimilip Enterprise",
     locale: "en_KE",
     type: "website",
   },

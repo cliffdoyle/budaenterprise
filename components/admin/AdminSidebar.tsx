@@ -80,7 +80,7 @@ export default function AdminSidebar({ unreadCount = 0 }: AdminSidebarProps) {
       {open && (
         <div className="md:hidden fixed inset-0 z-40 flex">
           <div className="w-64 bg-white border-r border-gray-200 p-4 flex flex-col">
-            <p className="font-bold text-navy text-lg mb-4">Buda Enterprise</p>
+            <p className="font-bold text-navy text-lg mb-4">Vimilip Enterprise</p>
             <NavList />
             <div className="mt-auto pt-4 border-t border-gray-200">
               <form action="/api/auth/signout" method="POST">
@@ -101,7 +101,7 @@ export default function AdminSidebar({ unreadCount = 0 }: AdminSidebarProps) {
       <aside className="hidden md:flex flex-col w-56 shrink-0 bg-white border-r border-gray-200 min-h-screen">
         <div className="p-4 border-b border-gray-200">
           <Link href="/" className="text-navy font-bold text-base">
-            Buda<span className="text-cta">Enterprise</span>
+            Vimilip<span className="text-cta">Enterprise</span>
           </Link>
           <p className="text-xs text-gray-500 mt-0.5">Admin Panel</p>
         </div>

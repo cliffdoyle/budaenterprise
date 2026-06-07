@@ -42,7 +42,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <p className="text-white font-bold text-xl mb-2">
-            Buda<span className="text-cta">Enterprise</span>
+            Vimilip<span className="text-cta">Enterprise</span>
           </p>
           <p className="text-sm leading-relaxed">
             Your reliable partner for transport, plumbing and painting in Kisumu, Kenya.
@@ -106,10 +106,10 @@ export default function Footer() {
             <li className="flex items-center gap-2">
               <Mail size={14} className="text-cta shrink-0" />
               <a
-                href="mailto:info@budaenterprise.co.ke"
+                href="mailto:info@vimilipenterprise.co.ke"
                 className="hover:text-cta transition-colors"
               >
-                info@budaenterprise.co.ke
+                info@vimilipenterprise.co.ke
               </a>
             </li>
             <li className="flex items-start gap-2">
@@ -129,7 +129,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
-        &copy; {new Date().getFullYear()} Buda Enterprise. All rights reserved.
+        &copy; {new Date().getFullYear()} Vimilip Enterprise. All rights reserved.
       </div>
     </footer>
   );

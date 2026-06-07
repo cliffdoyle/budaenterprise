@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
   phone: z.string().min(7, 'Enter a valid phone number').max(20),
-  service: z.enum(['transport', 'plumbing', 'painting', 'general']),
+  service: z.enum(['transport', 'plumbing', 'painting', 'welding', 'general']),
   message: z
     .string()
     .min(10, 'Message must be at least 10 characters')
@@ -36,7 +36,7 @@ export const settingsSchema = z.object({
 
 export const portfolioImageSchema = z.object({
   caption: z.string().max(200).nullable().optional(),
-  service_slug: z.enum(['transport', 'plumbing', 'painting']),
+  service_slug: z.enum(['transport', 'plumbing', 'painting', 'welding']),
   sort_order: z.number().int().min(0).optional(),
   is_active: z.boolean().optional(),
 });

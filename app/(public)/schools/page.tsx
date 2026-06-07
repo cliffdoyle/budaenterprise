@@ -9,7 +9,7 @@ import type { School } from '@/lib/types';
 export const metadata: Metadata = {
   title: 'Schools & Institutions',
   description:
-    'Buda Enterprise is trusted by schools and institutions across Kisumu for transport, plumbing and painting services.',
+    'Vimilip Enterprise is trusted by schools and institutions across Kisumu for transport, plumbing and painting services.',
 };
 
 export const revalidate = 60;
@@ -35,11 +35,10 @@ export default async function SchoolsPage() {
       {/* Header */}
       <section className="bg-navy text-white py-16 px-4 text-center">
         <FadeIn>
-          <p className="text-cta text-xs uppercase tracking-widest font-semibold mb-2">Social Proof</p>
-          <h1 className="text-4xl font-extrabold">Schools & Institutions</h1>
-          <p className="mt-3 text-white/70 max-w-xl mx-auto leading-relaxed">
-            We are proud to partner with educational institutions across Kisumu, delivering
-            reliable transport, plumbing and painting services that support learning environments.
+          <p className="text-cta text-xs uppercase tracking-widest font-semibold mb-2">Verified Track Record</p>
+          <h1 className="text-4xl font-extrabold">Schools & Institutions We Have Served</h1>
+          <p className="mt-3 text-white/70 max-w-2xl mx-auto leading-relaxed">
+            From Nairobi to Nakuru, Vimilip Enterprise has delivered painting, welding, plumbing and transport services to some of Kenya&apos;s most respected schools and institutions. Our work is verifiable — you can visit these sites and see the quality yourself.
           </p>
         </FadeIn>
       </section>
@@ -121,7 +120,7 @@ export default async function SchoolsPage() {
               Is your institution looking for these services?
             </h2>
             <p className="mt-2 text-navy/70">
-              We work with schools on transport, plumbing and painting projects of all sizes.
+              We work with schools on painting, welding, plumbing and transport projects of all sizes across Kenya.
             </p>
             <div className="flex flex-wrap gap-3 justify-center mt-6">
               <Link

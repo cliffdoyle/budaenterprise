@@ -7,7 +7,7 @@ import FadeIn from '@/components/public/FadeIn';
 export const metadata: Metadata = {
   title: 'Portfolio',
   description:
-    'Browse completed projects by Buda Enterprise — transport deliveries, plumbing installations and painting work across Kisumu.',
+    'Browse completed projects by Vimilip Enterprise — transport deliveries, plumbing installations and painting work across Kisumu.',
 };
 
 export const revalidate = 60;

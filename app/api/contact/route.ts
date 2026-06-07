@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
     try {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
-        from: 'noreply@budaenterprise.co.ke',
+        from: 'noreply@vimilipenterprise.co.ke',
         to: process.env.ADMIN_EMAIL,
         subject: `New enquiry from ${name} — ${service}`,
         text: `Name: ${name}\nPhone: ${phone}\nService: ${service}\n\nMessage:\n${message}`,

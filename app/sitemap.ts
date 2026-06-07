@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const BASE_URL = process.env.NEXTAUTH_URL ?? 'https://budaenterprise.co.ke';
+const BASE_URL = process.env.NEXTAUTH_URL ?? 'https://vimilipenterprise.co.ke';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
